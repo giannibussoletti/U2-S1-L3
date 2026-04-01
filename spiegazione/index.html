@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      img {
+        display: block;
+        width: 500px;
+      }
+    </style>
+    <title>Architettura Flexbox</title>
+  </head>
+  <body>
+    <a
+      target="_blank"
+      href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-css-flexbox-background">
+      Guida principale da usare per riaggiustare gli appunti</a
+    >
+    <header><h1>FLEXBOX e altre meraviglie</h1></header>
+    <main><h2>Architettura ed elementi parent(containers)</h2></main>
+    <p>
+      Flexbox è uno strumento di impaginazione. Si potrebbe dire che probabilmente è lo strumento
+      principale di impaginazione nel web moderno. Nato per rispondere all'esigenza dei siti in
+      mobile, è pensato alla base per essere responsive ready. È un sistema di disposizione
+      monodimensionale, quindi lavora solo su asse x o y, di default flexbox lavora sull'asse x
+      (quella orizzontale).
+    </p>
+    <p>
+      <code>display: flex;</code> è la proprietà che viene data a parent principale. Questo andrà ad
+      applicare il flex a tutti i children. Per cambiare la sua direzione (che di defualt è x), si
+      usa <code>flex-direction: row(default) | column </code>. L'asse principale si definisce
+      <strong>main axis</strong> quella opposta e "secondaria" viene chiamata
+      <strong>cross axis</strong>. Per decidere come si comportano i children nel contenitore quando
+      quest'ultimo si rimpicciolisce o non basta lo spazio è
+      <code>flex-wrap: no-wrap (default) | wrap | wrap-reverse</code>.
+    </p>
+    <p>
+      <code>FLEX-DIRECTION: row</code> posiziona gli item in orizzontale di default da sinistra
+      verso destra.
+    </p>
+    <p>
+      <code>FLEX-DIRECTION: column</code> posiziona gli item in verticale di default dall'alto verso
+      il basso.
+    </p>
+    <p>
+      <code>FLEX-WRAP: no-wrap (default) | wrap | wrap-reverse</code> decide come gli elementi
+      interni si comportano quando il contenitore genitore non è abbastanza grande o si restringe.
+      con wrap si intende il "rompre la riga" in caso di necessità.
+    </p>
+
+    <p>
+      Esistono poi <code>justify-content:</code> e <code>align:items</code>.
+      <code>justify-content</code> serve per gestire lo spazio sulla main axis, mentre
+      <code>align-items</code> allinea i contenitori sulla cross axis.
+    </p>
+
+    <p>
+      <code>JUSTIFY-CONTENT: flex-start | space-between | space-around | space-evenly</code>
+    </p>
+    <p>
+      <code>ALIGN-ITEMS: flex-start | stetch (default) | flex-end</code>
+    </p>
+
+    <p><code>ALIGN-CONTENT:</code> permette di allineare mutipli oggetti su più righe</p>
+    <img src="./container_properties.png" alt="" />
+    <h2>Elementi Children</h2>
+    <p>
+      <code>ORDER:</code> Funziona solo per i singoli elementi e gestisce il modo in cui vengono
+      "disegnati" sulla pagina. Usa valori con numeri interi sia negativi che positivi.
+    </p>
+    <p>
+      <code>FLEX-GROW: | FLEX-SHRINK: </code> viene usato per far crescere un singolo elemento
+      andando ad occupare lo spazio vuoto rimanente all'interno del parent.
+      <img src="./child_properties.png" alt="" />
+    </p>
+  </body>
+</html>
